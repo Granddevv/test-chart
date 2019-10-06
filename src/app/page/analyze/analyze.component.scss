@@ -1,0 +1,10 @@
+.chart-container {
+  padding: 5rem;
+
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - 10rem);
+    align-items: center;
+  }
+}
