@@ -8,6 +8,7 @@ import { LayoutComponent } from './layout.component';
   declarations: [LayoutComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  bootstrap: [LayoutComponent]
 })
 export class LayoutModule { }

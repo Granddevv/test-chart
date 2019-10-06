@@ -1,1 +1,23 @@
-<p>layout works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">
+    Angular + HighChart Visualization
+  </a>
+
+  <button class="navbar-toggler" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">Main</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/analyze">Visualization</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
