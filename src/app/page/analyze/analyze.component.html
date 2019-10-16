@@ -4,7 +4,7 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
-  <div *ngIf="isFetched">
+  <div *ngIf="isFetched" (click)="changeColor()">
     <div *ngIf="method == 'combine' || method == 'two'"
          (mousemove)="synchronizeTooltips($event)"
          (touchmove)="synchronizeTooltips($event)"
@@ -31,5 +31,5 @@
       >
       </highcharts-chart>
     </div>
-  </div>
+  </div *ngIf="isFetched">
 </div>

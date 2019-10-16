@@ -38,14 +38,38 @@ export class AnalyzeComponent implements OnInit {
   method: string;
   Highcharts = Highcharts;
 
+  bgColor ='transparent'
+
   constructor(
     private analyzeService: AnalyzeService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.loadData();
+    this.loadDataObservable();
+    // this.loadData();
     this.method = this.route.snapshot.params.id;
+  }
+
+  loadDataObservable = () => {
+    this.analyzeService.getAnalyzeData().subscribe(
+      data => {
+        this.coverageData = data.results.map(item => item.datacoverage);
+        this.elevationData = data.results.map(item => item.elevation);
+        this.isFetched = true;
+        this.syncData();
+      },
+      error => {
+        console.log("error occurred", error)
+      },
+      () => {
+        this.isLoading = true;
+      }
+    )
+  }
+
+  colorChange() {
+    this.bgColor = 'red';
   }
 
   async loadData() {
